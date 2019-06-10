@@ -77,7 +77,7 @@ map <S-I> <C-W>K
 map <S-K> <C-W>J
 
 "move between tabs."
-nnoremap <Tab> :tabnext<CR>
+nnoremap <C-@> :tabnext<CR>
 
 let python_highlight_all=1
 syntax on
