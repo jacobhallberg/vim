@@ -76,6 +76,20 @@ map <S-L> <C-W>L
 map <S-I> <C-W>K
 map <S-K> <C-W>J
 
+"move between terminal and window."
+tnoremap <C-j> <C-W><C-H>
+tnoremap <C-k> <C-W><C-J>
+tnoremap <C-l> <C-W><C-L>
+tnoremap <C-i> <C-W><C-K>
+
+"move terminal around in terminal mode."
+tnoremap <S-J> <C-W>H
+tnoremap <S-L> <C-W>L
+tnoremap <S-I> <C-W>K
+tnoremap <S-K> <C-W>J
+
+
+
 "move between tabs."
 nnoremap <C-@> :tabnext<CR>
 
@@ -136,3 +150,8 @@ vnoremap \s :s/\%V
 
 " No Wrap. "
 set nowrap
+
+" Mouse control resizing of windows."
+set mouse=n
+set ttymouse=xterm2
+
