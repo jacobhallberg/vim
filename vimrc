@@ -80,7 +80,7 @@ map <S-K> <C-W>J
 tnoremap <C-j> <C-W><C-H>
 tnoremap <C-k> <C-W><C-J>
 tnoremap <C-l> <C-W><C-L>
-tnoremap <C-i> <C-W><C-K>
+tnoremap <C-u> <C-W><C-K>
 
 "move terminal around in terminal mode."
 tnoremap <S-J> <C-W>H
