@@ -1,6 +1,8 @@
 set nocompatible              " required
 filetype off                  " required
 
+" Install Vundle:
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -77,16 +79,16 @@ map <S-I> <C-W>K
 map <S-K> <C-W>J
 
 "move between terminal and window."
-tnoremap <C-j> <C-W><C-H>
-tnoremap <C-k> <C-W><C-J>
-tnoremap <C-l> <C-W><C-L>
-tnoremap <C-u> <C-W><C-K>
+"tnoremap <C-j> <C-W><C-H>
+"tnoremap <C-k> <C-W><C-J>
+"tnoremap <C-l> <C-W><C-L>
+"tnoremap <C-u> <C-W><C-K>
 
-"move terminal around in terminal mode."
-tnoremap <S-J> <C-W>H
-tnoremap <S-L> <C-W>L
-tnoremap <S-I> <C-W>K
-tnoremap <S-K> <C-W>J
+""move terminal around in terminal mode."
+"tnoremap <S-J> <C-W>H
+"tnoremap <S-L> <C-W>L
+"tnoremap <S-I> <C-W>K
+"tnoremap <S-K> <C-W>J
 
 
 
