@@ -45,6 +45,9 @@ map <C-o> :NERDTreeToggle<CR>
 " Allows git commands directly within vim. "
 Plugin 'tpope/vim-fugitive.git'
 
+" Fuzzy Finder
+Plugin 'ctrlpvim/ctrlp.vim.git'
+
 " Syntax checking. "
 " Plugin 'w0rp/ale.git'
 " let g:ale_lint_on_text_changed = 'never'
