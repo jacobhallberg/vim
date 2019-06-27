@@ -160,3 +160,6 @@ set nowrap
 set mouse=n
 set ttymouse=xterm2
 
+set nowrap
+set wrap
+set formatoptions-=t
