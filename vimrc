@@ -23,24 +23,11 @@ Plugin 'tpope/vim-commentary.git'
 Plugin 'itchyny/lightline.vim.git'
 set noshowmode
 
-" Plugin 'vim-syntastic/syntastic.git'
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_python_checkers = ['pylint']
-
+" Surround Vim
+Plugin 'tpope/vim-surround'
 
 " Add git changes to side of line."
 Plugin 'airblade/vim-gitgutter.git'
-
-" Add file tree on command."
-Plugin 'scrooloose/nerdtree.git'
-map <C-o> :NERDTreeToggle<CR>
 
 " Allows git commands directly within vim. "
 Plugin 'tpope/vim-fugitive.git'
@@ -48,17 +35,60 @@ Plugin 'tpope/vim-fugitive.git'
 " Fuzzy Finder
 Plugin 'ctrlpvim/ctrlp.vim.git'
 
-" Syntax checking. "
-" Plugin 'w0rp/ale.git'
-" let g:ale_lint_on_text_changed = 'never'
-" let g:ale_fix_one_save = 1
+" Pretty
+Plugin 'altercation/vim-colors-solarized.git'
 
 
+"
 " ...
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" install: curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+call plug#begin('~/.vim/plugged')
+
+" Make sure you have nodejs installed. Sudo apt-get install nodejs
+" " Conquer of Completion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" if hidden is not set, TextEdit might fail.
+set hidden
+
+" Some servers have issues with backup files, see #649
+set nobackup
+set nowritebackup
+
+" Better display for messages
+set cmdheight=2
+
+" You will have bad experience for diagnostic messages when it's default 4000.
+set updatetime=300
+
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
+
+" always show signcolumns
+set signcolumn=yes
+
+" Tab Completion
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+call plug#end()
+
+" Make sure to set the theme and color palette of the terminal to solarized.
+syntax enable
+set background=dark
+colorscheme solarized
 
 au BufNewFile,BufRead *.py
     \ set tabstop=4
@@ -160,6 +190,10 @@ set nowrap
 set mouse=n
 set ttymouse=xterm2
 
+" Better Wrapping
 set nowrap
 set wrap
 set formatoptions-=t
+
+" Remap join line to M
+map <S-M> :join<ENTER>
