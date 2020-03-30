@@ -47,11 +47,11 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " install: curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-call plug#begin('~/.vim/plugged')
+" call plug#begin('~/.vim/plugged')
 
 " Make sure you have nodejs installed. Sudo apt-get install nodejs
 " " Conquer of Completion
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " if hidden is not set, TextEdit might fail.
 set hidden
 
@@ -83,7 +83,7 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-call plug#end()
+" call plug#end()
 
 " Make sure to set the theme and color palette of the terminal to solarized.
 syntax enable
@@ -197,3 +197,7 @@ set formatoptions-=t
 
 " Remap join line to M
 map <S-M> :join<ENTER>
+
+" Enables backspace for lines that you did not type. An issue I had when using
+" Iterm2.
+set backspace=indent,eol,start
